@@ -5,5 +5,5 @@ export interface ParsingResult {
   source: string;
   success: boolean;
   errors: IError[];
-  ast: any;
+  ast: unknown;
 }

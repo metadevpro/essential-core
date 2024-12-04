@@ -5,7 +5,7 @@ import { ErrorBase } from "./errorBase";
 
 describe("ErrorBase", () => {
   it("error creation", () => {
-    let sut = new ErrorBase(ErrorType.Warning, "e1", undefined, {
+    const sut = new ErrorBase(ErrorType.Warning, "e1", undefined, {
       filename: "file.txt",
       start: {
         line: 13,

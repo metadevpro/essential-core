@@ -1,12 +1,17 @@
 import { Essential } from './essential';
-import { ModelElement, VisitMode, MetaInfo } from './modelElement';
+import { ModelElement, VisitMode, MetaInfo, Location } from './modelElement';
 import { ErrorBase } from './errorBase';
 import { StaticSequencer } from './sequencer';
+
+export interface ModelElementBaseBuilder {
+  id?: string;
+  location?: Location;
+}
 
 export class ModelElementBase implements ModelElement {
   _meta: MetaInfo;
 
-  constructor(options: any = {}) {
+  constructor(options: ModelElementBaseBuilder = {}) {
     options = options || {};
     this._meta = {
       id: options.id || StaticSequencer.generateUniqueId('e')
@@ -31,7 +36,7 @@ export class ModelElementBase implements ModelElement {
    * Identity definition.
    * To be overrided in descendent classes
    */
-  identity(): any {
+  identity(): unknown {
     return this.getTypeName() + '_' + this.getId(); // default implementation
   }
   /**
@@ -84,12 +89,15 @@ export class ModelElementBase implements ModelElement {
   toJson(): string {
     let res = '{';
     let prefix = '';
-    for (let prop in this) {
-      if (this.hasOwnProperty(prop) && prop !== '_meta') {
-        let value = this[prop];
+    for (const prop in this) {
+      if (
+        Object.prototype.hasOwnProperty.call(this, prop) &&
+        prop !== '_meta'
+      ) {
+        const value = this[prop];
         let payload = '';
-        let el = Essential.asModelElement(value);
-        let elCol = Essential.asModelElementCollection(value);
+        const el = Essential.asModelElement(value);
+        const elCol = Essential.asModelElementCollection(value);
         if (elCol) {
           payload = Essential.collectionToJson(elCol);
         } else if (el) {
@@ -105,12 +113,15 @@ export class ModelElementBase implements ModelElement {
   }
   toEssential(): string {
     let res = this.getTypeName() + ' ' + this.getId() + ' {\n';
-    for (let prop in this) {
-      if (this.hasOwnProperty(prop) && prop !== '_meta') {
-        let value = this[prop];
+    for (const prop in this) {
+      if (
+        Object.prototype.hasOwnProperty.call(this, prop) &&
+        prop !== '_meta'
+      ) {
+        const value = this[prop];
         let payload = '';
-        let el = Essential.asModelElement(value);
-        let elCol = Essential.asModelElementCollection(value);
+        const el = Essential.asModelElement(value);
+        const elCol = Essential.asModelElementCollection(value);
         if (elCol) {
           payload = Essential.collectionToEssential(elCol);
         } else if (el) {
@@ -126,6 +137,7 @@ export class ModelElementBase implements ModelElement {
   private visitNode(action: (el: ModelElement) => void) {
     action(this);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   visitChildren(visitMode: VisitMode, action: (el: ModelElement) => void) {
     // Overriden in descendent clases
     throw new Error('Unimplemented');

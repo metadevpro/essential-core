@@ -12,7 +12,7 @@ describe("essential", () => {
     expect(Essential.isModelElement([])).eql(false);
     expect(Essential.isModelElement(["a", "b"])).eql(false);
 
-    let c = [new ModelElementBase(), new ModelElementBase()];
+    const c = [new ModelElementBase(), new ModelElementBase()];
     expect(Essential.isModelElement(c)).eql(false);
 
     expect(Essential.isModelElement(new ModelElementBase())).eql(true);
@@ -29,7 +29,7 @@ describe("essential", () => {
 
     expect(Essential.isModelElementCollection([])).eql(true);
 
-    let c = [new ModelElementBase(), new ModelElementBase()];
+    const c = [new ModelElementBase(), new ModelElementBase()];
     expect(Essential.isModelElementCollection(c)).eql(true);
   });
   it("asModelElement", () => {
@@ -40,10 +40,10 @@ describe("essential", () => {
     expect(Essential.asModelElement([])).eql(null);
     expect(Essential.asModelElement(["a", "b"])).eql(null);
 
-    let c = [new ModelElementBase(), new ModelElementBase()];
+    const c = [new ModelElementBase(), new ModelElementBase()];
     expect(Essential.asModelElement(c)).eql(null);
 
-    let me = new ModelElementBase();
+    const me = new ModelElementBase();
     expect(Essential.asModelElement(me)).eql(me);
   });
   it("asModelElementCollection", () => {
@@ -54,10 +54,10 @@ describe("essential", () => {
     expect(Essential.asModelElementCollection([])).eql([]);
     expect(Essential.asModelElementCollection(["a", "b"])).eql(null);
 
-    let c = [new ModelElementBase(), new ModelElementBase()];
+    const c = [new ModelElementBase(), new ModelElementBase()];
     expect(Essential.asModelElementCollection(c)).eql(c);
 
-    let me = new ModelElementBase();
+    const me = new ModelElementBase();
     expect(Essential.asModelElementCollection(me)).eql(null);
   });
 });

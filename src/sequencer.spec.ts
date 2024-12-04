@@ -4,7 +4,7 @@ import { Sequencer, StaticSequencer } from './sequencer';
 
 describe('Sequencer', () => {
   it('use', () => {
-    let sut = new Sequencer('m');
+    const sut = new Sequencer('m');
 
     expect(sut.prefix).eql('m');
     expect(sut.seq).eql(0);
@@ -16,14 +16,14 @@ describe('Sequencer', () => {
     expect(sut.seq).eql(3);
   });
   it('default naming = e*', () => {
-    let sut = new Sequencer();
+    const sut = new Sequencer();
 
     expect(sut.prefix).eql('e');
     expect(sut.seq).eql(0);
     expect(sut.generateUniqueId()).eql('e0');
   });
   it('reset() works', () => {
-    let sut = new Sequencer();
+    const sut = new Sequencer();
 
     expect(sut.prefix).eql('e');
     expect(sut.seq).eql(0);
@@ -43,7 +43,7 @@ describe('Sequencer', () => {
 });
 describe('StaticSequencer', () => {
   it('use', () => {
-    let sut = StaticSequencer;
+    const sut = StaticSequencer;
 
     sut.reset('z');
     expect(sut.generateUniqueId('z')).eql('z0');

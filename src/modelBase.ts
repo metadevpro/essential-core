@@ -5,7 +5,7 @@ export class ModelBase extends ModelElementBase implements Model {
   modelName: string;
   version: string = '0';
 
-  constructor(options: any = {}) {
+  constructor(options: Partial<ModelBase> = {}) {
     super(options);
     if (options.modelName) {
       this.modelName = options.modelName;

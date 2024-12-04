@@ -44,7 +44,7 @@ export interface ModelElement {
   visit(visitMode: VisitMode, action: (el: ModelElement) => void): void;
 
   // equality. to be overrided
-  identity(): any;
+  identity(): unknown;
   hashCodeElement(): number;
 
   // equality. generic
