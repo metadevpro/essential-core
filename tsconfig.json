@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "noEmitHelpers": false,
+    "outDir": "./bin",
+    "rootDir": "src",
+    "allowJs": false,
+    "esModuleInterop": true,
+    "declaration": true
+  },
+  "compileOnSave": true,
+  "buildOnSave": true,
+  "exclude": [
+    "bin",
+    "dist",
+    "node_modules",
+    "coverage",
+    "tools",
+    "**/*.spec.ts"
+  ]
+}

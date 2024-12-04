@@ -1,0 +1,28 @@
+{
+  "name": "@metadev/essential-core",
+  "version": "1.0.0",
+  "description": "Core SDK Metamodeling Framework. Essential",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "mocha --require tsx \"src/**/*.spec.ts\"",
+    "coverage": "nyc --reporter=html mocha --require tsx \"src/**/*.spec.ts\""
+  },
+  "keywords": [
+    "mde",
+    "essential",
+    "metadev"
+  ],
+  "author": "https://metadev.pro",
+  "license": "apache-2.0",
+  "devDependencies": {
+    "@types/chai": "^5.0.1",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.10.1",
+    "chai": "^5.1.2",
+    "mocha": "^11.0.1",
+    "nyc": "^17.1.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
