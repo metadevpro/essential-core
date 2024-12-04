@@ -1,11 +1,10 @@
 {
   "name": "@metadev/essential-core",
   "version": "1.0.0",
+  "type": "module",
   "description": "Core SDK Metamodeling Framework. Essential",
-  "main": "index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "tsup": "tsup --dts",
+    "build": "tsup",
     "lint": "eslint src",
     "test": "mocha --require tsx \"src/**/*.spec.ts\"",
     "coverage": "nyc --reporter=html mocha --require tsx \"src/**/*.spec.ts\""
@@ -31,17 +30,28 @@
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.17.0"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "README.md",
     "package.json",
-    "src/**"
+    "dist/**"
   ],
   "tsup": {
     "entry": [
-      "src/**/*.ts"
+      "src/**/*.ts",
+      "!src/**/*.spec.ts"
     ],
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "dts": true,
     "splitting": false,
     "sourcemap": true,
-    "clean": true
+    "clean": true,
+    "minify": true,
+    "treeshake": true
   }
 }
