@@ -1,6 +1,12 @@
 {
   "name": "@metadev/essential-core",
   "version": "1.0.0",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/metadevpro/essential-core"
+  },
+  "author": "https://metadev.pro",
+  "license": "apache-2.0",
   "type": "module",
   "description": "Core SDK Metamodeling Framework. Essential",
   "scripts": {
@@ -14,8 +20,6 @@
     "essential",
     "metadev"
   ],
-  "author": "https://metadev.pro",
-  "license": "apache-2.0",
   "devDependencies": {
     "@eslint/js": "^9.16.0",
     "@types/chai": "^5.0.1",
