@@ -1,9 +1,12 @@
 {
   "name": "@metadev/essential-core",
   "version": "1.0.0",
+  "bugs": {
+    "url": "https://github.com/metadevpro/essential-core/issues"
+  },
   "repository": {
-    "type": "github",
-    "url": "https://github.com/metadevpro/essential-core"
+    "type": "git",
+    "url": "git@github.com:metadevpro/essential-core.git"
   },
   "author": "https://metadev.pro",
   "license": "apache-2.0",
@@ -13,7 +16,9 @@
     "build": "tsup",
     "lint": "eslint src",
     "test": "mocha --require tsx \"src/**/*.spec.ts\"",
-    "coverage": "nyc --reporter=html mocha --require tsx \"src/**/*.spec.ts\""
+    "coverage": "nyc --reporter=html mocha --require tsx \"src/**/*.spec.ts\"",
+    "prepublish": "npm run lint && npm run test && npm run build",
+    "publish": "npm publish . --access=public"
   },
   "keywords": [
     "mde",
