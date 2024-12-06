@@ -42,7 +42,7 @@ export class ModelElementBase implements ModelElement {
   /**
    * sameConcept check. based on same identity
    */
-  sameConcept(b: ModelElement): boolean {
+  sameConcept(b: ModelElement | null | undefined): boolean {
     if (!b) {
       return false;
     }
@@ -140,7 +140,7 @@ export class ModelElementBase implements ModelElement {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   visitChildren(visitMode: VisitMode, action: (el: ModelElement) => void) {
     // Overriden in descendent clases
-    throw new Error('Unimplemented');
+    //throw new Error('Unimplemented');
   }
   validate(): ErrorBase[] {
     return [];

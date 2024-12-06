@@ -49,7 +49,7 @@ export interface ModelElement {
 
   // equality. generic
   hashCode(): number;
-  sameConcept(b: ModelElement): boolean;
+  sameConcept(b: ModelElement | null | undefined): boolean;
   equals(b: ModelElement): boolean;
 
   // mergeWith(b: ModelElement): void;
