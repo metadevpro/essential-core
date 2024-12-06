@@ -15,6 +15,8 @@ Base clases and interfaces for:
 - Linting
 - Model Element Sequencer
 
+[Changelog](./doc/Changelog.md)
+
 ## License
 
 Published as **Apache-2.0** License.
