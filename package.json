@@ -1,6 +1,6 @@
 {
   "name": "@metadev/essential-core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "bugs": {
     "url": "https://github.com/metadevpro/essential-core/issues"
   },
@@ -26,21 +26,21 @@
     "metadev"
   ],
   "devDependencies": {
-    "@eslint/js": "^9.16.0",
+    "@eslint/js": "^9.17.0",
     "@types/chai": "^5.0.1",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^22.10.1",
+    "@types/node": "^22.10.3",
     "chai": "^5.1.2",
-    "eslint": "^9.16.0",
+    "eslint": "^9.17.0",
     "mocha": "^11.0.1",
     "nyc": "^17.1.0",
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
-    "typescript-eslint": "^8.17.0"
+    "typescript-eslint": "^8.19.0"
   },
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "files": [
     "README.md",

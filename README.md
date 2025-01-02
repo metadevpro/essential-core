@@ -22,6 +22,6 @@ Base clases and interfaces for:
 Published as **Apache-2.0** License.
 
 ----
-&copy; Pedro J. Molina, PhD. 2007 - 2024
+&copy; Pedro J. Molina, PhD. 2007 - 2025
 
-&copy; Metadev 2016 - 2024
+&copy; Metadev 2016 - 2025
