@@ -4,6 +4,8 @@ Metadev Essential/Core library.
 
 Base clases for SDK for the meta-modeling framework **Essential**.
 
+See [Changelog](./changelog.md).
+
 ## Content
 
 Base clases and interfaces for:
